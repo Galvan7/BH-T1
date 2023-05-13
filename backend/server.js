@@ -9,6 +9,7 @@ import chatroomRoutes from "./routes/chatrooms.js";
 import otpRoutes from "./routes/otp.js";
 import http from "http";
 import { Server } from "socket.io";
+import path from 'path';
 
 
 /* App Config */
@@ -70,6 +71,14 @@ io.on("connection", (socket) => {
     io.emit("getUsers", users);
   });
 });
+//serving frontend
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '../chatapp/build')));
+console.log(path.join(__dirname, '../chatapp/build'))
+app.get("*",function(req,res){
+  res.sendFile(path.join(__dirname, '../chatapp/build', 'index.html'));
+});
+
 
 /* API Routes -> The first part is the default path for all the requests in that users.js file there we have to continue from this path */
 app.use("/api/users", userRoutes);

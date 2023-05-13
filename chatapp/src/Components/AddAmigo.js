@@ -9,7 +9,7 @@ function AddAmigo({addchattoggler,addchattoggle}) {
     const [userExists, setUserExists] = useState(true);
     const { user } = useContext(AuthContext)
 
-    const API_URL = "http://localhost:5000/"
+    const API_URL = "https://buzzhive.onrender.com/"
 
     const handleSubmit = async (e) => {
         e.preventDefault()

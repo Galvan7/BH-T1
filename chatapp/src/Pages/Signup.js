@@ -14,7 +14,7 @@ function Signup() {
   const [isLoading,setIsLoading] = useState(false)
   const history = useHistory();
 
-  const API_URL = "http://localhost:5000"
+  const API_URL = "https://buzzhive.onrender.com"
 
   const handleForm = async (e) => {
     e.preventDefault();
