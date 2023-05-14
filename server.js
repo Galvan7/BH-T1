@@ -90,7 +90,7 @@ app.use("/api/send-otp",otpRoutes);
 
 /* Database Connection */
 mongoose.connect(
-  "mongodb+srv://amangoswami2k3:Love%4022&12@cluster0.sgyjckv.mongodb.net/records",
+  "URL",
   {
     useCreateIndex: true,
     useNewUrlParser: true,
